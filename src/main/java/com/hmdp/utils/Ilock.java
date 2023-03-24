@@ -4,6 +4,6 @@ public interface Ilock {
 
     boolean trylock(long timeSec);
 
-    void setlock();
+    void unlock();
 
 }
