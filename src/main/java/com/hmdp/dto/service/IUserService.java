@@ -1,4 +1,4 @@
-package com.hmdp.service;
+package com.hmdp.dto.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hmdp.dto.LoginFormDTO;

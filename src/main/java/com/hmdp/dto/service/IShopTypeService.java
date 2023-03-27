@@ -1,6 +1,6 @@
-package com.hmdp.service;
+package com.hmdp.dto.service;
 
-import com.hmdp.entity.BlogComments;
+import com.hmdp.entity.ShopType;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author 虎哥
  * @since 2021-12-22
  */
-public interface IBlogCommentsService extends IService<BlogComments> {
+public interface IShopTypeService extends IService<ShopType> {
 
 }

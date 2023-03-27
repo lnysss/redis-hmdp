@@ -1,6 +1,6 @@
-package com.hmdp.service;
+package com.hmdp.dto.service;
 
-import com.hmdp.entity.ShopType;
+import com.hmdp.entity.Follow;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author 虎哥
  * @since 2021-12-22
  */
-public interface IShopTypeService extends IService<ShopType> {
+public interface IFollowService extends IService<Follow> {
 
 }

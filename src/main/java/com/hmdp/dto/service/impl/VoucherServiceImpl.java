@@ -1,12 +1,13 @@
-package com.hmdp.service.impl;
+package com.hmdp.dto.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hmdp.dto.Result;
+import com.hmdp.dto.service.IVoucherService;
 import com.hmdp.entity.Voucher;
 import com.hmdp.mapper.VoucherMapper;
 import com.hmdp.entity.SeckillVoucher;
-import com.hmdp.service.ISeckillVoucherService;
-import com.hmdp.service.IVoucherService;
+import com.hmdp.dto.service.ISeckillVoucherService;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +27,9 @@ public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> impl
 
     @Resource
     private ISeckillVoucherService seckillVoucherService;
+
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
 
     @Override
     public Result queryVoucherOfShop(Long shopId) {
@@ -47,12 +51,8 @@ public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> impl
         seckillVoucher.setBeginTime(voucher.getBeginTime());
         seckillVoucher.setEndTime(voucher.getEndTime());
         seckillVoucherService.save(seckillVoucher);
-    }
 
-    @Override
-    public Result seckillVoucher(Long voucherId) {
-
-        SeckillVoucher voucher = seckillVoucherService.getById(voucherId);
-        return null;
+        stringRedisTemplate.opsForValue().set("seckill:stock" + voucher.getId(),
+                voucher.getStock().toString());
     }
 }

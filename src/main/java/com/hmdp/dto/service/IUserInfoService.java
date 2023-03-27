@@ -1,4 +1,4 @@
-package com.hmdp.service;
+package com.hmdp.dto.service;
 
 import com.hmdp.entity.UserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;

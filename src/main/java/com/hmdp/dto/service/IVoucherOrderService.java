@@ -1,4 +1,4 @@
-package com.hmdp.service;
+package com.hmdp.dto.service;
 
 import com.hmdp.dto.Result;
 import com.hmdp.entity.VoucherOrder;
@@ -16,6 +16,6 @@ public interface IVoucherOrderService extends IService<VoucherOrder> {
 
     Result seckillVoucher(Long voucherId);
 
-    Result createVoucherOrder(Long voucherId);
+    void createVoucherOrder(VoucherOrder voucherOrder);
 
 }

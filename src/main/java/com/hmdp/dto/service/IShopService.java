@@ -1,4 +1,4 @@
-package com.hmdp.service;
+package com.hmdp.dto.service;
 
 import com.hmdp.dto.Result;
 import com.hmdp.entity.Shop;
